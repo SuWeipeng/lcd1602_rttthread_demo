@@ -1,0 +1,50 @@
+common:
+  includes:
+  - Drivers
+  - Drivers\CMSIS
+  - Drivers\CMSIS\Device
+  - Drivers\CMSIS\Device\ST
+  - Drivers\CMSIS\Device\ST\STM32F4xx
+  - Drivers\CMSIS\Device\ST\STM32F4xx\Include
+  - Drivers\CMSIS\Include
+  - Drivers\STM32F4xx_HAL_Driver
+  - Drivers\STM32F4xx_HAL_Driver\Inc
+  - Drivers\STM32F4xx_HAL_Driver\Inc\Legacy
+  - Inc
+  - Middlewares
+  - Middlewares\ST
+  - Middlewares\ST\STM32_USB_Device_Library
+  - Middlewares\ST\STM32_USB_Device_Library\Class
+  - Middlewares\ST\STM32_USB_Device_Library\Class\CDC
+  - Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Inc
+  - Middlewares\ST\STM32_USB_Device_Library\Core
+  - Middlewares\ST\STM32_USB_Device_Library\Core\Inc
+  - Middlewares\Third_Party
+  - Middlewares\Third_Party\FatFs
+  - Middlewares\Third_Party\FatFs\src
+  sources:
+    Drivers:
+    - Drivers\STM32F4xx_HAL_Driver\Src
+    Middlewares:
+    - Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src\usbd_cdc.c
+    - Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c
+    - Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c
+    - Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c
+    - Middlewares\Third_Party\FatFs\src\diskio.c
+    - Middlewares\Third_Party\FatFs\src\ff.c
+    - Middlewares\Third_Party\FatFs\src\ff_gen_drv.c
+    - Middlewares\Third_Party\FatFs\src\option\syscall.c
+    Src:
+    - Src
+  target:
+  - disco-f407vg
+tool_specific:
+  uvision5:
+    macros:
+    - USE_HAL_DRIVER
+    - STM32F407xx
+    sources:
+      StartUp:
+      - IDE\MDK5
+    linker_file:
+    - IDE\MDK5\stm32f4discovery.sct

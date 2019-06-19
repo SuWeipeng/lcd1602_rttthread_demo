@@ -1,6 +1,8 @@
 projects:
   stm32f4discovery:
-  - project.yaml
+  - project_cubemx.yaml
+  stm32f4discovery-rtt:
+  - project_rtthread.yaml
 settings:
   export_dir: 
   - generate_project
