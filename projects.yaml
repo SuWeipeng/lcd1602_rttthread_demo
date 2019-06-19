@@ -1,0 +1,5 @@
+projects:
+  stm32f4discovery:
+  - project.yaml
+settings:
+  export_dir: .
