@@ -88,7 +88,30 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+rt_thread_t led1_thread;
+rt_thread_t led2_thread;
 
+void led1_thread_entry(void* parameter)
+{
+  while(1) {
+    HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, GPIO_PIN_RESET);
+    rt_thread_delay(500);
+
+    HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, GPIO_PIN_SET);
+    rt_thread_delay(500);
+  }
+}
+
+void led2_thread_entry(void* parameter)
+{
+  while(1) {
+    HAL_GPIO_WritePin(LED_R_GPIO_Port, LED_R_Pin, GPIO_PIN_RESET);
+    rt_thread_delay(200);
+
+    HAL_GPIO_WritePin(LED_R_GPIO_Port, LED_R_Pin, GPIO_PIN_SET);
+    rt_thread_delay(200);
+  }
+}
 /* USER CODE END 0 */
 
 /**
@@ -122,7 +145,8 @@ int main(void)
   MX_FATFS_Init();
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
-
+  RTT_CREATE(led1,led1_thread_entry,RT_NULL,256,5,20);
+  RTT_CREATE(led2,led2_thread_entry,RT_NULL,256,5,20);
   /* USER CODE END 2 */
 
   /* Infinite loop */

@@ -62,7 +62,8 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <rtthread.h>
+#include <rtdevice.h>
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -97,7 +98,19 @@ void Error_Handler(void);
 #define LED_B_Pin GPIO_PIN_15
 #define LED_B_GPIO_Port GPIOD
 /* USER CODE BEGIN Private defines */
-
+#define RTT_CREATE(NAME,ENTRY,ARGS,STACK_SIZE,PRI,TICK)  \
+  NAME##_thread = rt_thread_create(#NAME,                \
+                                   ENTRY,                \
+                                   ARGS,                 \
+                                   STACK_SIZE,           \
+                                   PRI,                  \
+                                   TICK);                \
+  if(NAME##_thread != RT_NULL)	                         \
+    rt_thread_startup(NAME##_thread);                    \
+  else{                                                  \
+    rt_kprintf(#NAME " thread create failed!\n");        \
+    return -1;                                           \
+  }
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
