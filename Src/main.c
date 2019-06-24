@@ -55,7 +55,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "LCD.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -88,30 +88,7 @@ static void MX_GPIO_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-rt_thread_t led1_thread;
-rt_thread_t led2_thread;
 
-void led1_thread_entry(void* parameter)
-{
-  while(1) {
-    HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, GPIO_PIN_RESET);
-    rt_thread_delay(500);
-
-    HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, GPIO_PIN_SET);
-    rt_thread_delay(500);
-  }
-}
-
-void led2_thread_entry(void* parameter)
-{
-  while(1) {
-    HAL_GPIO_WritePin(LED_R_GPIO_Port, LED_R_Pin, GPIO_PIN_RESET);
-    rt_thread_delay(200);
-
-    HAL_GPIO_WritePin(LED_R_GPIO_Port, LED_R_Pin, GPIO_PIN_SET);
-    rt_thread_delay(200);
-  }
-}
 /* USER CODE END 0 */
 
 /**
@@ -145,8 +122,8 @@ int main(void)
   MX_FATFS_Init();
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
-  RTT_CREATE(led1,led1_thread_entry,RT_NULL,256,5,20);
-  RTT_CREATE(led2,led2_thread_entry,RT_NULL,256,5,20);
+	LCD_Init(); 
+	LCD_Puts(0,1,"Hello World");
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -215,16 +192,33 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOD, LED_G_Pin|LED_O_Pin|LED_R_Pin|LED_B_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOD, LED_G_Pin|LED_O_Pin|LED_R_Pin|LED_B_Pin 
+                          |LCD_RS_Pin|LCD_D4_Pin|LCD_D5_Pin|LCD_D6_Pin 
+                          |LCD_D7_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : LED_G_Pin LED_O_Pin LED_R_Pin LED_B_Pin */
-  GPIO_InitStruct.Pin = LED_G_Pin|LED_O_Pin|LED_R_Pin|LED_B_Pin;
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, LCD_E_Pin|LCD_RW_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : LED_G_Pin LED_O_Pin LED_R_Pin LED_B_Pin 
+                           LCD_RS_Pin LCD_D4_Pin LCD_D5_Pin LCD_D6_Pin 
+                           LCD_D7_Pin */
+  GPIO_InitStruct.Pin = LED_G_Pin|LED_O_Pin|LED_R_Pin|LED_B_Pin 
+                          |LCD_RS_Pin|LCD_D4_Pin|LCD_D5_Pin|LCD_D6_Pin 
+                          |LCD_D7_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : LCD_E_Pin LCD_RW_Pin */
+  GPIO_InitStruct.Pin = LCD_E_Pin|LCD_RW_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 }
 
