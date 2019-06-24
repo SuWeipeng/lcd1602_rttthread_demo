@@ -68,3 +68,14 @@ tool_specific:
       - Libraries\rt-thread\libcpu\arm\cortex-m4\context_rvds.S
     linker_file:
     - IDE\MDK5\stm32f4discovery.sct
+  iar_arm:
+    macros:
+    - USE_HAL_DRIVER
+    - STM32F407xx    
+    sources:
+      StartUp:
+      - IDE\IAR
+      RTThread:
+      - Libraries\rt-thread\libcpu\arm\cortex-m4\context_iar.S
+    linker_file:
+    - IDE\IAR\stm32f407xx_flash.icf

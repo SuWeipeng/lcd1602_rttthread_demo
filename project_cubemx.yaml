@@ -50,3 +50,12 @@ tool_specific:
       - IDE\MDK5
     linker_file:
     - IDE\MDK5\stm32f4discovery.sct
+  iar_arm:
+    macros:
+    - USE_HAL_DRIVER
+    - STM32F407xx    
+    sources:
+      StartUp:
+      - IDE\IAR
+    linker_file:
+    - IDE\IAR\stm32f407xx_flash.icf
