@@ -1,9 +1,7 @@
-/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
+  * @file   fatfs.c
+  * @brief  Code for fatfs applications
   ******************************************************************************
   * This notice applies to any and all portions of this file
   * that are not between comment pairs USER CODE BEGIN and
@@ -47,77 +45,42 @@
   *
   ******************************************************************************
   */
-/* USER CODE END Header */
 
-/* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __MAIN_H
-#define __MAIN_H
+#include "fatfs.h"
 
-#ifdef __cplusplus
-extern "C" {
-#endif
+uint8_t retUSER;    /* Return value for USER */
+char USERPath[4];   /* USER logical drive path */
+FATFS USERFatFS;    /* File system object for USER logical drive */
+FIL USERFile;       /* File object for USER */
 
-/* Includes ------------------------------------------------------------------*/
-#include "stm32f4xx_hal.h"
+/* USER CODE BEGIN Variables */
 
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
+/* USER CODE END Variables */    
 
-/* USER CODE END Includes */
+void MX_FATFS_Init(void) 
+{
+  /*## FatFS: Link the USER driver ###########################*/
+  retUSER = FATFS_LinkDriver(&USER_Driver, USERPath);
 
-/* Exported types ------------------------------------------------------------*/
-/* USER CODE BEGIN ET */
-
-/* USER CODE END ET */
-
-/* Exported constants --------------------------------------------------------*/
-/* USER CODE BEGIN EC */
-
-/* USER CODE END EC */
-
-/* Exported macro ------------------------------------------------------------*/
-/* USER CODE BEGIN EM */
-
-/* USER CODE END EM */
-
-/* Exported functions prototypes ---------------------------------------------*/
-void Error_Handler(void);
-
-/* USER CODE BEGIN EFP */
-
-/* USER CODE END EFP */
-
-/* Private defines -----------------------------------------------------------*/
-#define LED_G_Pin GPIO_PIN_12
-#define LED_G_GPIO_Port GPIOD
-#define LED_O_Pin GPIO_PIN_13
-#define LED_O_GPIO_Port GPIOD
-#define LED_R_Pin GPIO_PIN_14
-#define LED_R_GPIO_Port GPIOD
-#define LED_B_Pin GPIO_PIN_15
-#define LED_B_GPIO_Port GPIOD
-#define LCD_RS_Pin GPIO_PIN_3
-#define LCD_RS_GPIO_Port GPIOD
-#define LCD_D4_Pin GPIO_PIN_4
-#define LCD_D4_GPIO_Port GPIOD
-#define LCD_D5_Pin GPIO_PIN_5
-#define LCD_D5_GPIO_Port GPIOD
-#define LCD_D6_Pin GPIO_PIN_6
-#define LCD_D6_GPIO_Port GPIOD
-#define LCD_D7_Pin GPIO_PIN_7
-#define LCD_D7_GPIO_Port GPIOD
-#define LCD_E_Pin GPIO_PIN_3
-#define LCD_E_GPIO_Port GPIOB
-#define LCD_RW_Pin GPIO_PIN_4
-#define LCD_RW_GPIO_Port GPIOB
-/* USER CODE BEGIN Private defines */
-
-/* USER CODE END Private defines */
-
-#ifdef __cplusplus
+  /* USER CODE BEGIN Init */
+  /* additional user code for init */     
+  /* USER CODE END Init */
 }
-#endif
 
-#endif /* __MAIN_H */
+/**
+  * @brief  Gets Time from RTC 
+  * @param  None
+  * @retval Time in DWORD
+  */
+DWORD get_fattime(void)
+{
+  /* USER CODE BEGIN get_fattime */
+  return 0;
+  /* USER CODE END get_fattime */  
+}
+
+/* USER CODE BEGIN Application */
+     
+/* USER CODE END Application */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

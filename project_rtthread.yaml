@@ -53,7 +53,7 @@ common:
     - Middlewares\Third_Party\FatFs\src\ff_gen_drv.c
     - Middlewares\Third_Party\FatFs\src\option\syscall.c
     Src:
-    - Src
+    - Src-rtt
   target:
   - disco-f407vg
 tool_specific:

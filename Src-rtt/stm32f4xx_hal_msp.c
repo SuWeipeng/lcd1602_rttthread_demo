@@ -1,9 +1,9 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
+  * File Name          : stm32f4xx_hal_msp.c
+  * Description        : This file provides code for the MSP Initialization 
+  *                      and de-Initialization codes.
   ******************************************************************************
   * This notice applies to any and all portions of this file
   * that are not between comment pairs USER CODE BEGIN and
@@ -49,75 +49,66 @@
   */
 /* USER CODE END Header */
 
-/* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __MAIN_H
-#define __MAIN_H
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 /* Includes ------------------------------------------------------------------*/
-#include "stm32f4xx_hal.h"
-
-/* Private includes ----------------------------------------------------------*/
+#include "main.h"
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
 
-/* Exported types ------------------------------------------------------------*/
-/* USER CODE BEGIN ET */
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN TD */
 
-/* USER CODE END ET */
+/* USER CODE END TD */
 
-/* Exported constants --------------------------------------------------------*/
-/* USER CODE BEGIN EC */
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN Define */
+ 
+/* USER CODE END Define */
 
-/* USER CODE END EC */
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN Macro */
 
-/* Exported macro ------------------------------------------------------------*/
-/* USER CODE BEGIN EM */
+/* USER CODE END Macro */
 
-/* USER CODE END EM */
+/* Private variables ---------------------------------------------------------*/
+/* USER CODE BEGIN PV */
 
-/* Exported functions prototypes ---------------------------------------------*/
-void Error_Handler(void);
+/* USER CODE END PV */
 
-/* USER CODE BEGIN EFP */
+/* Private function prototypes -----------------------------------------------*/
+/* USER CODE BEGIN PFP */
 
-/* USER CODE END EFP */
+/* USER CODE END PFP */
 
-/* Private defines -----------------------------------------------------------*/
-#define LED_G_Pin GPIO_PIN_12
-#define LED_G_GPIO_Port GPIOD
-#define LED_O_Pin GPIO_PIN_13
-#define LED_O_GPIO_Port GPIOD
-#define LED_R_Pin GPIO_PIN_14
-#define LED_R_GPIO_Port GPIOD
-#define LED_B_Pin GPIO_PIN_15
-#define LED_B_GPIO_Port GPIOD
-#define LCD_RS_Pin GPIO_PIN_3
-#define LCD_RS_GPIO_Port GPIOD
-#define LCD_D4_Pin GPIO_PIN_4
-#define LCD_D4_GPIO_Port GPIOD
-#define LCD_D5_Pin GPIO_PIN_5
-#define LCD_D5_GPIO_Port GPIOD
-#define LCD_D6_Pin GPIO_PIN_6
-#define LCD_D6_GPIO_Port GPIOD
-#define LCD_D7_Pin GPIO_PIN_7
-#define LCD_D7_GPIO_Port GPIOD
-#define LCD_E_Pin GPIO_PIN_3
-#define LCD_E_GPIO_Port GPIOB
-#define LCD_RW_Pin GPIO_PIN_4
-#define LCD_RW_GPIO_Port GPIOB
-/* USER CODE BEGIN Private defines */
+/* External functions --------------------------------------------------------*/
+/* USER CODE BEGIN ExternalFunctions */
 
-/* USER CODE END Private defines */
+/* USER CODE END ExternalFunctions */
 
-#ifdef __cplusplus
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */
+/**
+  * Initializes the Global MSP.
+  */
+void HAL_MspInit(void)
+{
+  /* USER CODE BEGIN MspInit 0 */
+
+  /* USER CODE END MspInit 0 */
+
+  __HAL_RCC_SYSCFG_CLK_ENABLE();
+  __HAL_RCC_PWR_CLK_ENABLE();
+
+  /* System interrupt init*/
+
+  /* USER CODE BEGIN MspInit 1 */
+
+  /* USER CODE END MspInit 1 */
 }
-#endif
 
-#endif /* __MAIN_H */
+/* USER CODE BEGIN 1 */
+
+/* USER CODE END 1 */
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
