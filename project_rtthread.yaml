@@ -110,6 +110,7 @@ tool_specific:
       - -fmessage-length=0
       - -fno-builtin
       - -mthumb
+      - -gdwarf-2
       ld_flags:
       - -specs=nano.specs
       - -Wl,--gc-sections
