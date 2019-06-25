@@ -1,3 +1,0 @@
-[submodule "Libraries/rt-thread"]
-	path = Libraries/rt-thread
-	url = https://github.com/SuWeipeng/rt-thread.git
