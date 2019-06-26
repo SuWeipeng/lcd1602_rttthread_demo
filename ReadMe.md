@@ -4,6 +4,11 @@
 * 绿灯闪烁是一个独立线程
 * LCD 显示是 CubeMX 下调好的驱动（到 RTT 上仅改了一点点）
 
+工作流视频链接
+---
+* [b站链接](https://www.bilibili.com/video/av56958199/)
+* [youtube链接](https://www.youtube.com/watch?v=MuO4iodYEm0&t=0s)
+
 LCD 接线
 ---
 > LCD 用的是 Arduino 的 `LCD Keypad`<br>
