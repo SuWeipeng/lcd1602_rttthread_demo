@@ -1,0 +1,343 @@
+首先，我们用 CubeMX 创建一个闪烁 LED 的工程。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+在生成代码之前，先用 git 托管代码工程文件夹
+
+
+
+
+
+
+
+
+
+
+
+
+
+闪烁一个 LED 
+    HAL_Delay(500);
+    HAL_GPIO_TogglePin(GPIOD, LED_G_Pin);
+
+
+
+
+
+
+
+
+
+
+
+
+
+编译、烧写，看现象
+
+
+
+
+
+
+
+
+git 忽略自动生成的与编译平台相关文件夹
+
+git 提交版本
+
+
+
+
+
+
+
+
+
+
+
+下面开始，用 RTT 线程闪烁两个 LED
+
+
+
+
+
+
+
+
+
+
+将我精简的 RTT 内核做为 submodule 加入到代码中
+
+git submodule add https://github.com/SuWeipeng/rt-thread.git Libraries/rt-thread
+
+
+
+
+
+
+
+
+
+
+
+
+git 提交版本
+
+
+
+
+
+
+
+
+
+
+
+
+拷贝 Demo 里的 *.ioc 文件，重新生成代码
+
+
+
+
+
+
+
+
+
+
+
+
+
+拷贝 Drivers 里面的 LCD 驱动
+拷贝 IDE 目录
+拷贝 Src-rtt 目录
+
+
+
+
+
+
+
+
+
+
+
+
+为了演示加入 RTT 的过程，删除 Src-rtt 目录下的 entry.c
+
+拷贝 main.c 到 Src-rtt 目录，重命名为 entry.c
+
+
+
+
+
+
+
+
+
+
+git 提交版本
+
+
+
+
+
+
+
+
+
+
+
+下面开始修改 entry.c 文件
+
+
+
+
+
+
+
+
+
+
+
+加入 rtt 相关头文件
+#include "entry.h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+加入 rtt 线程函数
+rt_thread_t led1_thread;
+rt_thread_t led2_thread;
+
+void led1_thread_entry(void* parameter)
+{
+  while(1) {
+    HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, GPIO_PIN_RESET);
+    rt_thread_delay(500);
+
+    HAL_GPIO_WritePin(LED_G_GPIO_Port, LED_G_Pin, GPIO_PIN_SET);
+    rt_thread_delay(500);
+  }
+}
+
+void led2_thread_entry(void* parameter)
+{
+  while(1) {
+    HAL_GPIO_WritePin(LED_G_GPIO_Port, GPIO_PIN_14, GPIO_PIN_RESET);
+    rt_thread_delay(200);
+
+    HAL_GPIO_WritePin(LED_G_GPIO_Port, GPIO_PIN_14, GPIO_PIN_SET);
+    rt_thread_delay(200);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+在 main() 函数中创建 rtt 线程
+  RTT_CREATE(led1,led1_thread_entry,RT_NULL,256,5,20);
+  RTT_CREATE(led2,led2_thread_entry,RT_NULL,256,5,20);
+
+
+
+
+
+
+
+
+
+
+
+删除 main() 函数中原来闪烁 LED 的两行代码
+
+
+
+
+
+
+
+
+
+
+
+
+拷贝 *.yaml 工程配置文件
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+通过如下命令生成 mdk5 工程
+
+progen generate -f projects.yaml -p stm32f4discovery-rtt -t uvision5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+编译、烧写，看现象
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+最后 git 提交一下版本
+
+
+再看一下 git 记录的开发流程，是不是一目了然很清晰？
+
+
+
+OK啦！
+
+
+
+欢迎扫码关注我的公众号 MultiMCU EDU
+
+
