@@ -316,7 +316,6 @@
           <state>$PROJ_DIR$\..\Libraries\rt-thread</state>
           <state>$PROJ_DIR$\..\Libraries\rt-thread\board-407vg</state>
           <state>$PROJ_DIR$\..\Libraries\rt-thread\components</state>
-          <state>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh</state>
           <state>$PROJ_DIR$\..\Libraries\rt-thread\components\drivers</state>
           <state>$PROJ_DIR$\..\Libraries\rt-thread\components\drivers\include</state>
           <state>$PROJ_DIR$\..\Libraries\rt-thread\HAL_Drivers</state>
@@ -1064,9 +1063,6 @@
       <name>$PROJ_DIR$\..\Libraries\rt-thread\src\clock.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\cmd.c</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\Libraries\rt-thread\src\components.c</name>
     </file>
     <file>
@@ -1083,36 +1079,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\Libraries\rt-thread\HAL_Drivers\drv_common.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_compiler.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_error.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_heap.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_init.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_node.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_ops.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_parser.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_token.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_var.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_vm.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Libraries\rt-thread\src\idle.c</name>
@@ -1136,31 +1102,16 @@
       <name>$PROJ_DIR$\..\Libraries\rt-thread\src\mempool.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\msh.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\msh_cmd.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\msh_file.c</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\Libraries\rt-thread\src\object.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Libraries\rt-thread\src\scheduler.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\shell.c</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\Libraries\rt-thread\src\signal.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Libraries\rt-thread\src\slab.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\symbol.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Libraries\rt-thread\src\thread.c</name>
@@ -1283,36 +1234,6 @@
       <name>$PROJ_DIR$\..\Inc\ffconf.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_api.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_error.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_heap.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_node.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_ops.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_parser.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_token.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_var.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_vm.h</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\Middlewares\Third_Party\FatFs\src\integer.h</name>
     </file>
     <file>
@@ -1338,9 +1259,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\Inc\main.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\msh.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Libraries\rt-thread\rtconfig.h</name>
@@ -1371,9 +1289,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\Libraries\rt-thread\include\rtthread.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\shell.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h</name>

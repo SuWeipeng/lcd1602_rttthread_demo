@@ -15,7 +15,6 @@ common:
   - Libraries/rt-thread
   - Libraries/rt-thread/board-407vg
   - Libraries/rt-thread/components
-  - Libraries/rt-thread/components/finsh
   - Libraries/rt-thread/components/drivers
   - Libraries/rt-thread/components/drivers/include
   - Libraries/rt-thread/HAL_Drivers
@@ -37,7 +36,6 @@ common:
     - Drivers/STM32F4xx_HAL_Driver/Src
     RTThread:
     - Libraries/rt-thread/board-407vg
-    - Libraries/rt-thread/components/finsh
     - Libraries/rt-thread/HAL_Drivers
     - Libraries/rt-thread/libcpu/arm/cortex-m4/cpuport.c
     - Libraries/rt-thread/src
