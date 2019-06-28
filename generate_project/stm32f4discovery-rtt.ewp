@@ -308,16 +308,20 @@
           <state>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F4xx</state>
           <state>$PROJ_DIR$\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include</state>
           <state>$PROJ_DIR$\..\Drivers\CMSIS\Include</state>
-          <state>$PROJ_DIR$\..\Drivers\LCD1602_4W\Inc</state>
           <state>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver</state>
           <state>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Inc</state>
           <state>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy</state>
           <state>$PROJ_DIR$\..\Inc</state>
           <state>$PROJ_DIR$\..\Libraries</state>
           <state>$PROJ_DIR$\..\Libraries\rt-thread</state>
+          <state>$PROJ_DIR$\..\Libraries\rt-thread\board-407vg</state>
           <state>$PROJ_DIR$\..\Libraries\rt-thread\components</state>
+          <state>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh</state>
           <state>$PROJ_DIR$\..\Libraries\rt-thread\components\drivers</state>
+          <state>$PROJ_DIR$\..\Libraries\rt-thread\components\drivers\include</state>
+          <state>$PROJ_DIR$\..\Libraries\rt-thread\HAL_Drivers</state>
           <state>$PROJ_DIR$\..\Libraries\rt-thread\include</state>
+          <state>$PROJ_DIR$\..\Libraries\rt-thread\include\libc</state>
           <state>$PROJ_DIR$\..\Middlewares</state>
           <state>$PROJ_DIR$\..\Middlewares\ST</state>
           <state>$PROJ_DIR$\..\Middlewares\ST\STM32_USB_Device_Library</state>
@@ -973,9 +977,6 @@
   <group>
     <name>Drivers</name>
     <file>
-      <name>$PROJ_DIR$\..\Drivers\LCD1602_4W\Src\LCD-rtt.c</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c</name>
     </file>
     <file>
@@ -1057,10 +1058,115 @@
   <group>
     <name>RTThread</name>
     <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\board-407vg\board.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\clock.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\cmd.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\components.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\Libraries\rt-thread\libcpu\arm\cortex-m4\context_iar.S</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\cpu.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\Libraries\rt-thread\libcpu\arm\cortex-m4\cpuport.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\device.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\HAL_Drivers\drv_common.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_compiler.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_error.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_heap.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_init.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_node.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_ops.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_parser.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_token.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_var.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_vm.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\idle.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\ipc.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\irq.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\kservice.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\mem.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\memheap.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\mempool.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\msh.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\msh_cmd.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\msh_file.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\object.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\scheduler.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\shell.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\signal.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\slab.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\symbol.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\thread.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\src\timer.c</name>
     </file>
   </group>
   <group>
@@ -1114,7 +1220,7 @@
       <name>$PROJ_DIR$\..\Drivers\CMSIS\Include\arm_math.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\board-407vg</name>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\board-407vg\board.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Drivers\CMSIS\Include\cmsis_armcc.h</name>
@@ -1124,9 +1230,6 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\Drivers\CMSIS\Include\cmsis_gcc.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Drivers\CMSIS\Include\core_cm0.h</name>
@@ -1162,7 +1265,10 @@
       <name>$PROJ_DIR$\..\Middlewares\Third_Party\FatFs\src\diskio.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\drivers</name>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\HAL_Drivers\drv_common.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\entry.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Inc\fatfs.h</name>
@@ -1177,31 +1283,97 @@
       <name>$PROJ_DIR$\..\Inc\ffconf.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh</name>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\HAL_Drivers</name>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_api.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\drivers\include</name>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_error.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\include</name>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_heap.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_node.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_ops.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_parser.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_token.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_var.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\finsh_vm.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Middlewares\Third_Party\FatFs\src\integer.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Drivers\LCD1602_4W\Inc\LCD.h</name>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\libc\libc_dirent.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Drivers\LCD1602_4W\Inc\LCD_Config.h</name>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\libc\libc_errno.h</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\libc</name>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\libc\libc_fcntl.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\libc\libc_fdset.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\libc\libc_ioctl.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\libc\libc_signal.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\libc\libc_stat.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Inc\main.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\msh.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\rtconfig.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\rtdbg.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\rtdebug.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\rtdef.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\drivers\include\rtdevice.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\rthw.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\rtlibc.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\rtm.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\rtservice.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\include\rtthread.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Libraries\rt-thread\components\finsh\shell.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h</name>

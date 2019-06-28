@@ -361,7 +361,7 @@
 							<MiscControls></MiscControls>
 							<Define>USE_HAL_DRIVER, STM32F407xx</Define>
 							<Undefine></Undefine>
-							<IncludePath>..\Drivers; ..\Drivers\CMSIS; ..\Drivers\CMSIS\Device; ..\Drivers\CMSIS\Device\ST; ..\Drivers\CMSIS\Device\ST\STM32F4xx; ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include; ..\Drivers\CMSIS\Include; ..\Drivers\LCD1602_4W\Inc; ..\Drivers\STM32F4xx_HAL_Driver; ..\Drivers\STM32F4xx_HAL_Driver\Inc; ..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy; ..\Inc; ..\Libraries; ..\Libraries\rt-thread; ..\Libraries\rt-thread\components; ..\Libraries\rt-thread\components\drivers; ..\Libraries\rt-thread\include; ..\Middlewares; ..\Middlewares\ST; ..\Middlewares\ST\STM32_USB_Device_Library; ..\Middlewares\ST\STM32_USB_Device_Library\Class; ..\Middlewares\ST\STM32_USB_Device_Library\Class\CDC; ..\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Inc; ..\Middlewares\ST\STM32_USB_Device_Library\Core; ..\Middlewares\ST\STM32_USB_Device_Library\Core\Inc; ..\Middlewares\Third_Party; ..\Middlewares\Third_Party\FatFs; ..\Middlewares\Third_Party\FatFs\src</IncludePath>
+							<IncludePath>..\Drivers; ..\Drivers\CMSIS; ..\Drivers\CMSIS\Device; ..\Drivers\CMSIS\Device\ST; ..\Drivers\CMSIS\Device\ST\STM32F4xx; ..\Drivers\CMSIS\Device\ST\STM32F4xx\Include; ..\Drivers\CMSIS\Include; ..\Drivers\STM32F4xx_HAL_Driver; ..\Drivers\STM32F4xx_HAL_Driver\Inc; ..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy; ..\Inc; ..\Libraries; ..\Libraries\rt-thread; ..\Libraries\rt-thread\board-407vg; ..\Libraries\rt-thread\components; ..\Libraries\rt-thread\components\finsh; ..\Libraries\rt-thread\components\drivers; ..\Libraries\rt-thread\components\drivers\include; ..\Libraries\rt-thread\HAL_Drivers; ..\Libraries\rt-thread\include; ..\Libraries\rt-thread\include\libc; ..\Middlewares; ..\Middlewares\ST; ..\Middlewares\ST\STM32_USB_Device_Library; ..\Middlewares\ST\STM32_USB_Device_Library\Class; ..\Middlewares\ST\STM32_USB_Device_Library\Class\CDC; ..\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Inc; ..\Middlewares\ST\STM32_USB_Device_Library\Core; ..\Middlewares\ST\STM32_USB_Device_Library\Core\Inc; ..\Middlewares\Third_Party; ..\Middlewares\Third_Party\FatFs; ..\Middlewares\Third_Party\FatFs\src</IncludePath>
 						</VariousControls>
 					</Cads>
 					<Aads>
@@ -404,11 +404,6 @@
 				<Group>
 					<GroupName>Drivers</GroupName>
 					<Files>
-						<File>
-							<FileType>1</FileType>
-							<FileName>LCD-rtt.c</FileName>
-							<FilePath>..\Drivers\LCD1602_4W\Src\LCD-rtt.c</FilePath>
-						</File>
 						<File>
 							<FileType>1</FileType>
 							<FileName>stm32f4xx_hal.c</FileName>
@@ -545,14 +540,189 @@
 					<GroupName>RTThread</GroupName>
 					<Files>
 						<File>
+							<FileType>1</FileType>
+							<FileName>board.c</FileName>
+							<FilePath>..\Libraries\rt-thread\board-407vg\board.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>clock.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\clock.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>cmd.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\cmd.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>components.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\components.c</FilePath>
+						</File>
+						<File>
 							<FileType>2</FileType>
 							<FileName>context_rvds.S</FileName>
 							<FilePath>..\Libraries\rt-thread\libcpu\arm\cortex-m4\context_rvds.S</FilePath>
 						</File>
 						<File>
 							<FileType>1</FileType>
+							<FileName>cpu.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\cpu.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
 							<FileName>cpuport.c</FileName>
 							<FilePath>..\Libraries\rt-thread\libcpu\arm\cortex-m4\cpuport.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>device.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\device.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>drv_common.c</FileName>
+							<FilePath>..\Libraries\rt-thread\HAL_Drivers\drv_common.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>finsh_compiler.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_compiler.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>finsh_error.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_error.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>finsh_heap.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_heap.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>finsh_init.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_init.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>finsh_node.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_node.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>finsh_ops.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_ops.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>finsh_parser.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_parser.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>finsh_token.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_token.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>finsh_var.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_var.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>finsh_vm.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_vm.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>idle.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\idle.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>ipc.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\ipc.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>irq.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\irq.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>kservice.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\kservice.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>mem.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\mem.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>memheap.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\memheap.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>mempool.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\mempool.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>msh.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\msh.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>msh_cmd.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\msh_cmd.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>msh_file.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\msh_file.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>object.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\object.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>scheduler.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\scheduler.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>shell.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\shell.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>signal.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\signal.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>slab.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\slab.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>symbol.c</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\symbol.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>thread.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\thread.c</FilePath>
+						</File>
+						<File>
+							<FileType>1</FileType>
+							<FileName>timer.c</FileName>
+							<FilePath>..\Libraries\rt-thread\src\timer.c</FilePath>
 						</File>
 					</Files>
 				</Group>
@@ -641,6 +811,11 @@
 						</File>
 						<File>
 							<FileType>5</FileType>
+							<FileName>board.h</FileName>
+							<FilePath>..\Libraries\rt-thread\board-407vg\board.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
 							<FileName>cmsis_armcc.h</FileName>
 							<FilePath>..\Drivers\CMSIS\Include\cmsis_armcc.h</FilePath>
 						</File>
@@ -711,6 +886,16 @@
 						</File>
 						<File>
 							<FileType>5</FileType>
+							<FileName>drv_common.h</FileName>
+							<FilePath>..\Libraries\rt-thread\HAL_Drivers\drv_common.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>entry.h</FileName>
+							<FilePath>..\Libraries\rt-thread\entry.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
 							<FileName>fatfs.h</FileName>
 							<FilePath>..\Inc\fatfs.h</FilePath>
 						</File>
@@ -731,23 +916,158 @@
 						</File>
 						<File>
 							<FileType>5</FileType>
+							<FileName>finsh.h</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>finsh_api.h</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_api.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>finsh_error.h</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_error.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>finsh_heap.h</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_heap.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>finsh_node.h</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_node.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>finsh_ops.h</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_ops.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>finsh_parser.h</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_parser.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>finsh_token.h</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_token.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>finsh_var.h</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_var.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>finsh_vm.h</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\finsh_vm.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
 							<FileName>integer.h</FileName>
 							<FilePath>..\Middlewares\Third_Party\FatFs\src\integer.h</FilePath>
 						</File>
 						<File>
 							<FileType>5</FileType>
-							<FileName>LCD.h</FileName>
-							<FilePath>..\Drivers\LCD1602_4W\Inc\LCD.h</FilePath>
+							<FileName>libc_dirent.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\libc\libc_dirent.h</FilePath>
 						</File>
 						<File>
 							<FileType>5</FileType>
-							<FileName>LCD_Config.h</FileName>
-							<FilePath>..\Drivers\LCD1602_4W\Inc\LCD_Config.h</FilePath>
+							<FileName>libc_errno.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\libc\libc_errno.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>libc_fcntl.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\libc\libc_fcntl.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>libc_fdset.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\libc\libc_fdset.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>libc_ioctl.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\libc\libc_ioctl.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>libc_signal.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\libc\libc_signal.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>libc_stat.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\libc\libc_stat.h</FilePath>
 						</File>
 						<File>
 							<FileType>5</FileType>
 							<FileName>main.h</FileName>
 							<FilePath>..\Inc\main.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>msh.h</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\msh.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>rtconfig.h</FileName>
+							<FilePath>..\Libraries\rt-thread\rtconfig.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>rtdbg.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\rtdbg.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>rtdebug.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\rtdebug.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>rtdef.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\rtdef.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>rtdevice.h</FileName>
+							<FilePath>..\Libraries\rt-thread\components\drivers\include\rtdevice.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>rthw.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\rthw.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>rtlibc.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\rtlibc.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>rtm.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\rtm.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>rtservice.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\rtservice.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>rtthread.h</FileName>
+							<FilePath>..\Libraries\rt-thread\include\rtthread.h</FilePath>
+						</File>
+						<File>
+							<FileType>5</FileType>
+							<FileName>shell.h</FileName>
+							<FilePath>..\Libraries\rt-thread\components\finsh\shell.h</FilePath>
 						</File>
 						<File>
 							<FileType>5</FileType>

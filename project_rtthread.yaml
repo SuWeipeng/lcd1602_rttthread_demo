@@ -7,7 +7,6 @@ common:
   - Drivers/CMSIS/Device/ST/STM32F4xx
   - Drivers/CMSIS/Device/ST/STM32F4xx/Include
   - Drivers/CMSIS/Include
-  - Drivers/LCD1602_4W/Inc
   - Drivers/STM32F4xx_HAL_Driver
   - Drivers/STM32F4xx_HAL_Driver/Inc
   - Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
@@ -35,7 +34,6 @@ common:
   - Middlewares/Third_Party/FatFs/src
   sources:
     Drivers:
-    - Drivers/LCD1602_4W/Src/LCD-rtt.c
     - Drivers/STM32F4xx_HAL_Driver/Src
     RTThread:
     - Libraries/rt-thread/board-407vg

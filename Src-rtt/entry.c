@@ -56,7 +56,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "entry.h"
-#include "LCD.h"
+//#include "LCD.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -146,8 +146,8 @@ int main(void)
   MX_FATFS_Init();
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
-  LCD_Init(); 
-  LCD_Puts(0,0,"Hello\n\rWorld");
+//  LCD_Init(); 
+//  LCD_Puts(0,0,"Hello\n\rWorld");
   RTT_CREATE(led1,led1_thread_entry,RT_NULL,256,5,20);
   RTT_CREATE(led2,led2_thread_entry,RT_NULL,256,5,20);
   /* USER CODE END 2 */
